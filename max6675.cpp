@@ -43,7 +43,7 @@ double MAX6675::readCelsius(void) {
   if (hwSPI) {
 #ifdef MAX6675_LIBRARY_HW_SLOWDOWN  
     uint8_t oldSPCR = SPCR;
-    SPCR |= 2; // As slow as possible (clock/128 or clock/64 depending on SPI2X)
+    SPCR |= 3; // As slow as possible (clock/128 or clock/64 depending on SPI2X)
 #endif // MAX6675_LIBRARY_HW_SLOWDOWN    
     v = SPI.transfer16(0);
 #ifdef MAX6675_LIBRARY_HW_SLOWDOWN
